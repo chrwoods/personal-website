@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Head from '../components/head'
-import Nav from '../components/nav'
+import Header from '../components/header'
 
 const Home = () => {
   const [date, setDate] = useState(null);
@@ -17,11 +16,10 @@ const Home = () => {
 
   return (
     <div>
-      <Head title="Home" />
-      <Nav />
+      <Header />
 
       <div className="hero">
-        <h1 className="title">Welcome to Next!</h1>
+        <h1 className="title">Welcome to the placeholder!</h1>
         <p className="description">
           To get started, edit the <code>pages/index.js</code> or <code>pages/api/date.js</code> files, then save to reload.
         </p>
@@ -96,7 +94,7 @@ const Home = () => {
           width: 176px;
           text-align: center;
         }
-        @keyframes Loading { 
+        @keyframes Loading {
           0%{background-position:0% 50%}
           50%{background-position:100% 50%}
           100%{background-position:0% 50%}
