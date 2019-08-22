@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Header from '../components/header'
+import Cover from '../components/landing/cover'
 
 const Home = () => {
   const [date, setDate] = useState(null);
@@ -17,6 +18,8 @@ const Home = () => {
   return (
     <div>
       <Header />
+
+      <Cover />
 
       <div className="hero">
         <h1 className="title">Welcome to the placeholder!</h1>
