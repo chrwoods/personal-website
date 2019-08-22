@@ -32,7 +32,7 @@ const Cover = () => (
 
       #cover-text {
         margin: 0;
-        font-size: 2rem;
+        font-size: 1.8rem;
         color: white;
       }
 

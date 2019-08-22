@@ -1,30 +1,27 @@
-import React from 'react'
 import Link from 'next/link'
 
 const links = [
+  { href: '/', label: 'Home' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/food', label: 'Food' },
   { href: 'https://github.com/chrwoods', label: 'Github' }
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
+];
 
 const Nav = () => (
   <nav>
+    <Link prefetch href="/">
+      <a>
+        <img src="/static/logo-white.png" />
+      </a>
+    </Link>
     <ul>
-      <li>
-        <Link prefetch href="/">
-          <img src="/static/logo-white.png" />
-        </Link>
-      </li>
-      <ul>
-        {links.map(({ key, href, label }) => (
-          <li key={key}>
-            <Link href={href}>
-              <a>{label}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {links.map(({ href, label }) => (
+        <li key={"nav-link-" + label}>
+          <Link href={href}>
+            <a>{label}</a>
+          </Link>
+        </li>
+      ))}
     </ul>
 
     <style jsx>{`
@@ -34,27 +31,36 @@ const Nav = () => (
         font-size: 16px;
       }
       nav {
+        display: flex;
         position: fixed;
         height: 5rem;
         background-color: rgba(48, 120, 195, 0.4);
         color: white;
-        text-align: center;
         width: 100%;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      nav > a {
+        position: fixed;
+        display: flex;
+        left: 1rem;
+      }
+      img {
+        height: 4rem;
       }
       ul {
         display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
       }
       li {
         display: flex;
-        padding: 6px 8px;
+        padding-right: 1.5rem;
       }
       a {
         color: white;
         text-decoration: none;
+      }
+      a:hover {
+        color: #fd9;
       }
     `}</style>
   </nav>
