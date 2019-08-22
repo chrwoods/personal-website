@@ -13,7 +13,7 @@ const Nav = () => (
     <ul>
       <li>
         <Link prefetch href="/">
-          <a>Home</a>
+          <img src="/static/logo-white.png" />
         </Link>
       </li>
       <ul>
@@ -30,10 +30,16 @@ const Nav = () => (
     <style jsx>{`
       :global(body) {
         margin: 0;
-        font-family: Proxima Nova, Helvetica, sans-serif;
+        font-family: Proxima Nova Light, Helvetica, sans-serif;
+        font-size: 16px;
       }
       nav {
+        position: fixed;
+        height: 5rem;
+        background-color: rgba(48, 120, 195, 0.4);
+        color: white;
         text-align: center;
+        width: 100%;
       }
       ul {
         display: flex;
@@ -47,9 +53,8 @@ const Nav = () => (
         padding: 6px 8px;
       }
       a {
-        color: #067df7;
+        color: white;
         text-decoration: none;
-        font-size: 13px;
       }
     `}</style>
   </nav>
