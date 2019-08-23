@@ -1,4 +1,5 @@
 import Link from 'next/link'
+// import { bool } from 'prop-types'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -7,7 +8,7 @@ const links = [
   { href: 'https://github.com/chrwoods', label: 'Github' }
 ];
 
-const Nav = () => (
+const Nav = props => (
   <nav>
     <Link prefetch href="/">
       <a>
@@ -66,5 +67,9 @@ const Nav = () => (
     `}</style>
   </nav>
 )
+
+// Nav.propTypes = {
+//   sticky: bool
+// }
 
 export default Nav
