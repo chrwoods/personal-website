@@ -3,24 +3,39 @@ import React from 'react'
 class Cover extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { scrolled: 0 };
+    this.state = { offset: 0, scrolled: 0 };
   }
 
   handleScroll = (event) => {
-    if(window != null) {
+    if (window != null) {
       this.setState({
         scrolled: window.pageYOffset
       });
     }
   }
 
+  handleResize = (event) => {
+    if (window != null) {
+      var offset = 0;
+      var ratio = window.innerWidth / window.innerHeight;
+      if (ratio > 1.77) {
+        offset = Math.round(window.innerWidth / 1.77 - window.innerHeight) / -2;
+      }
+      this.setState({
+        offset: offset
+      });
+    }
+  }
+
   componentDidMount() {
+    this.handleResize();
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.handleResize);
   }
 
   render() {
     return (
-      <div id="cover-container" style={{backgroundPositionY: this.state.scrolled/-2}}>
+      <div id="cover-container" style={{backgroundPositionY: this.state.offset + this.state.scrolled / -2}}>
         <div id="cover-text">
           <p>Hello, I'm</p>
           <h1>CHRISTOPHER WOODS</h1>
