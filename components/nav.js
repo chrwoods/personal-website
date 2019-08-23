@@ -27,8 +27,9 @@ const Nav = () => (
     <style jsx>{`
       :global(body) {
         margin: 0;
-        font-family: Proxima Nova Light, Helvetica, sans-serif;
+        font-family: proxima-nova, Helvetica, sans-serif;
         font-size: 16px;
+        font-weight: 300;
       }
       nav {
         display: flex;
