@@ -1,5 +1,7 @@
 import Link from 'next/link'
 // import { bool } from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -10,6 +12,7 @@ const links = [
 
 const Nav = props => (
   <nav>
+    <FontAwesomeIcon icon={faGoogle} size="xs" />
     <Link prefetch href="/">
       <a>
         <img src="/static/logo-white.png" />
